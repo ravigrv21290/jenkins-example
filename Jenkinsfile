@@ -1,11 +1,11 @@
     pipeline {
     agent any
-
+    def mvnHome = tool 'apache-maven-3.6.0'
     stages {
         stage ('Compile Stage') {
             echo 'Pulling...' + env.BRANCH_NAME
 
-            def mvnHome = tool 'apache-maven-3.6.0'
+            
             steps {
                 withMaven(maven : 'apache-maven-3.6.0') {
                     bat(/"${mvnHome}\bin\mvn" -Dintegration-tests.skip=true clean package/)
