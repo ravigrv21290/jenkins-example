@@ -1,3 +1,4 @@
+
 def mvnHome    
 pipeline {
     agent any
@@ -7,7 +8,8 @@ pipeline {
            
             steps {
                 withMaven(maven : 'apache-maven-3.6.0') {
-                    bat 'clean package'                }
+                    bat 'clean package'               
+                }
             }
         }
 
