@@ -1,5 +1,3 @@
-
-def mvnHome    
 pipeline {
     agent any
    
